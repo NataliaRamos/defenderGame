@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Defender</title>
+	<script src="libs/phaser.js" charset="utf-8"></script>
+	<script src="js/boot.js" charset="utf-8"></script>
+	<script src="js/preloader.js" charset="utf-8"></script>
+	<style>
+		body {
+			padding: 0;
+			margin: 0;
+			background-color: #000000;
+		}
+	</style>
+</head>
+<body>
+	<div id="gameContainer"></div>
+	<script type="text/javascript">
+		window.onload = function(){
+			var game = new Phaser.Game(540, 960, Phaser.AUTO, 'gameContainer');
+			game.state.add('Boot', defender.Boot);
+			game.state.add('Preloader', defender.Preloader);
+			game.state.start('Boot');
+		}
+	</script>
+</body>
+</html>
